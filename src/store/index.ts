@@ -20,15 +20,18 @@ export default createStore({
     }
   },
   actions: {
-    async addCat({commit}){
-      try{
-          const req = await axios.get('https://api.thecatapi.com/v1/images/search?limit=100' ) 
-          const cats = await req.data
-          console.log(cats)
-          commit('ADD_CATS',cats) 
-      }catch(err){
-          console.log(err)
+    async addCat({commit,state}){
+      if(!state.listCats.length){
+        try{
+            const req = await axios.get('https://api.thecatapi.com/v1/images/search?limit=100' ) 
+            const cats = await req.data
+            console.log(cats)
+            commit('ADD_CATS',cats) 
+        }catch(err){
+            console.log(err)
+        }
       }
+      
     }
   },
   modules: {
