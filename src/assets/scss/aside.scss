@@ -1,0 +1,7 @@
+@import 'variables.scss';
+aside{
+    grid-area: aside;
+    background:$color-main;   
+    border: 1px solid $color-gray;  
+    border-top: none;
+}

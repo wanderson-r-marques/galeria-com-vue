@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: "Roboto";
+  text-decoration: none;
+  list-style: none;
+}
+
+#app {
+  max-width: 150vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 75px auto;
+  grid-template-areas: "header header" "aside main";
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+@import 'variables.scss';
+header{
+    grid-area: header;
+    align-items: center;
+    background:$color-main;   
+    border: 1px solid $color-gray; 
+    display: flex;
+    h1{
+        flex: 1;
+        text-align: center;
+    }
+    div#top{
+        flex: 4;
+        text-align: center;
+    }
+}
