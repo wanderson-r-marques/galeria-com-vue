@@ -1,24 +1,18 @@
-# cin-vue
+# Galeria de gatos
+> Projeto desenvolvido para a seleção de Frontend do CIn/UFPE
 
-## Project setup
-```
-npm install
-```
+![](preview.jpeg)
 
-### Compiles and hot-reloads for development
+## Instalação
+### Abra o terminal e execute
+```sh
+git clone https://github.com/wanderson-r-marques/galeria-com-vue.git
+cd galeria-com-vue
+npm install 
+vue serve
 ```
-npm run serve
+### Abra um navegador e digite
+```sh
+localhost:8080
+OBS: A porta 8080 pode alterar caso já esteja sendo utilizada.  
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
