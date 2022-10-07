@@ -24,7 +24,7 @@
     </script>
   
   <style lang="scss" scoped>
-  @import '@/assets/scss/variables.scss';
+  
   nav {
     padding: 30px;
     display: flex;
@@ -44,7 +44,7 @@
       color: #2c3e50;
   
       &.router-link-exact-active {
-        color: $color-blue;
+        color: #42b983;
       }
     }
   }
