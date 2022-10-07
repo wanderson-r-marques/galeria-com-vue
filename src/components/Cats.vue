@@ -1,6 +1,8 @@
 <template>    
-    <section id="cats">      
+    <section id="cats">  
+      <keep-alive>    
         <Cat v-for="cat in cats" :key="cat.id" :cat="cat" />
+      </keep-alive>
     </section>
   </template>
 
@@ -13,8 +15,8 @@
       name: 'Cats',
       setup() {
         const store = useStore()
-        const pageTitle = computed(() => store.state.pageTitle)           
-       
+
+        const pageTitle = computed(() => store.state.pageTitle)
         const cats = computed(() => store.state.listCats)
                 
         return {

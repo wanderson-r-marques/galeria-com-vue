@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import 'variables.scss';
 
-*{
+*{ // Reseta o padrão
     font-family: $font-main;
     text-decoration: none;
     list-style: none;
 }
 
-.reset-button{
+.reset-button{ // Remove os estilos dos botões
     border: none;
     margin: 0;
     padding: 0;
     width: auto;
     overflow: visible;
-
+    cursor: pointer;
     background: transparent;
 
     /* inherit font & color from ancestor */
@@ -30,9 +30,13 @@
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 } 
+.reset-button:hover{
+    filter: brightness(0.85);
+}
+
 
 #app{
-    max-width: 150vh;
+    max-width: 200vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 4fr;    

@@ -1,7 +1,9 @@
 <template>
     <section>        
         <div class="box-cat">
-          <button class="reset-button btn-favorite" @click="actived=!actived" :class="{active:actived}"><fa icon="heart"></fa></button>
+          <button class="reset-button btn-favorite" @click="favorited(cat)" :class="{active:actived}">
+            <fa icon="heart"></fa>
+          </button>
           <img :src="cat.url" alt="">
           <div class="box-button">
             <button class="btn btn-loved reset-button"><fa icon="thumbs-up"></fa> Adorei</button>
@@ -13,25 +15,37 @@
 
 <script lang="ts">
     import { defineComponent, ref } from 'vue';       
-    
+    import { useStore } from 'vuex';  
+
     export default defineComponent({
       name: 'Cat',
       props: ['cat'],      
       setup() {       
-        let actived = ref(false)
-        return {          
-          actived
-        }
-      },
-      components: {
         
-      },
+        let actived = ref(false)        
+        const store = useStore()
+
+        // Cria um tipo de dado 
+        type Cat = {
+          id: string,
+          url: string,
+          width: number,
+          height: number
+        }
+
+        const favorited = (cat:Cat) => { 
+          actived.value = !actived.value         
+          store.dispatch('ADD_FAVORITE_CAT',cat)
+        }
+        return {          
+          actived,
+          favorited
+        }
+      },      
     });
     </script>
   
-  <style lang="scss" scoped>
-    
-        
+  <style lang="scss" scoped>  
     .box-cat{
       position: relative;
       img{
@@ -57,7 +71,6 @@
             background: #1a9f18;
             color: #fff;
             border-bottom-left-radius: 8px;
-
           }          
           &.btn-hated{
             background: #a9001e;

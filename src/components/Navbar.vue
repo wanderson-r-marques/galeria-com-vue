@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav> 
       <ul>
         <li>
           <img src="@/assets/img/icon-1.jpg" />
@@ -13,8 +13,7 @@
   </template>
 
 <script lang="ts">
-    import { defineComponent } from 'vue';   
-    import { useStore } from 'vuex';   
+    import { defineComponent } from 'vue';         
     
     export default defineComponent({
       name: 'Navbar',
@@ -25,7 +24,7 @@
     </script>
   
   <style lang="scss" scoped>
-  
+  @import '@/assets/scss/variables.scss';
   nav {
     padding: 30px;
     display: flex;
@@ -45,7 +44,7 @@
       color: #2c3e50;
   
       &.router-link-exact-active {
-        color: #42b983;
+        color: $color-blue;
       }
     }
   }
